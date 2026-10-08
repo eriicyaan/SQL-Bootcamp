@@ -1,0 +1,7 @@
+SELECT p.name, COUNT(*) as count_of_visits
+FROM person_visits pv
+JOIN person p
+    ON person_id = p.id
+GROUP BY p.name
+ORDER BY count_of_visits DESC, p.name ASC
+LIMIT 4;
